@@ -36,6 +36,10 @@ def menu():
     print('[ 028 ] - \033[1;32mAUMENTO SALARIAL.\033[m')
     print('[ 029 ] - \033[1;32mCONVERSOR DE BASES NUMÉRICAS.\033[m')
     print('[ 030 ] - \033[1;32mALISTAMENTO MILITAR.\033[m')
+    print('[ 031 ] - \033[1;32mMEDIA ESCOLAR.\033[m')
+    print('[ 032 ] - \033[1;32mCLASSIFICAÇÃO DE ATLETAS.\033[m')
+    print('[ 033 ] - \033[1;32mSIMULADOR PAGAMENTO LOJA.\033[m')
+    print('[ 034 ] - \033[1;32mJOGO PEDRA, PAPEL OU TESOURA.\033[m')
     print('-' * 65)
     print('ESCOLHA SUA OPÇÃO DE EXERCÍCIO ENTRE 001 A 100')
     print('-' * 65)
@@ -545,6 +549,221 @@ while resp != 99:
                     print(print(f'NOME: {nome}'))
                     print(f'VOCÊ NASCEU EM {nasc} - ESTÁ NO ANO DE SEU ALISTAMENTO.')
                 print('-' * 15, ' FIM DO EXERCIIO ', '-' * 15)
+        case 31:
+            from datetime import date
+
+            print('\033[1;32mMEDIA ESCOLAR.\033[m\n')
+            for c in range(1, 4):
+                atual = date.today().year
+                nome = str(input('Digite o nome do aluno: '))
+                nasc = int(input('Digite o ano nascimento: '))
+                n1 = float(input('Digite a 1ª nota: '))
+                n2 = float(input('Digite a 2ª nota: '))
+                media = (n1 + n2) / 2
+                if media >= 7.00:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO ALUNO: {nome.strip().upper()}')
+                    print(f'ANO DE EXERCICIO: {atual}')
+                    print(f'1ª NOTA: {n1}')
+                    print(f'2ª NOTA: {n2}')
+                    print(f'MÉDIA FINAL: {media: .2f}')
+                    print(f'\033[1;33;40m{nome.upper()}, você foi APROVADO, parabens.\033[m')
+                elif media >= 5.00 and media < 7.00:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO ALUNO: {nome.strip().upper()}')
+                    print(f'ANO DE EXERCICIO: {atual}')
+                    print(f'1ª NOTA: {n1}')
+                    print(f'2ª NOTA: {n2}')
+                    print(f'MÉDIA FINAL: {media: .2f}')
+                    print(f'\033[1;33;40m{nome.upper()}, você está em RECUPERAÇÃO, estude mais.\033[m')
+                elif media < 5.00:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO ALUNO: {nome.strip().upper()}')
+                    print(f'ANO DE EXERCICIO: {atual}')
+                    print(f'1ª NOTA: {n1}')
+                    print(f'2ª NOTA: {n2}')
+                    print(f'MÉDIA FINAL: {media: .2f}')
+                    print(f'\033[1;33;40m{nome.upper()}, você foi REPROVADO.\033[m')
+                else:
+                    print('Você digitou algo errado, recomece o exercicio.')
+                print('-' * 15, ' FIM DO EXERCIIO ', '-' * 15)
+        case 32:
+            from datetime import date
+            print('\033[1;32mTITULO: CLASSIFICANDO ATLETAS.\033[m\n')
+            for c in range(1,4):
+                nome = str(input('Digite o nome do atleta: ').strip())
+                atual = date.today().year
+                nasc = int(input('Digite o ano nascimento do atleta: '))
+                idade = atual - nasc
+                if idade > 0 and idade <= 7:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO ATLETA: \033[1;32m{nome.upper()}\033[m')
+                    print(f'DATA NASCIMENTO: {nasc} => IDADE: {idade} ANOS')
+                    print('CLASSIFICAÇÃO: \033[1;32mMIRIM\033[m')
+                elif idade > 7 and idade <= 12:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO ATLETA: \033[1;32m{nome.upper()}\033[m')
+                    print(f'DATA NASCIMENTO: {nasc} => IDADE: {idade} ANOS')
+                    print('CLASSIFICAÇÃO: \033[1;32mINFANTIL\033[m')
+                elif idade > 12 and idade <= 18:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO ATLETA: \033[1;32m{nome.upper()}\033[m')
+                    print(f'DATA NASCIMENTO: {nasc} => IDADE: {idade} ANOS')
+                    print('CLASSIFICAÇÃO: \033[1;32mJUNIOR\033[m')
+                elif idade > 18 and idade <= 21:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO ATLETA: \033[1;32m{nome.upper()}\033[m')
+                    print(f'DATA NASCIMENTO: {nasc} => IDADE: {idade} ANOS')
+                    print('CLASSIFICAÇÃO: \033[1;32mADULTO\033[m')
+                elif idade > 21 and idade <= 35:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO ATLETA: \033[1;32m{nome.upper()}\033[m')
+                    print(f'DATA NASCIMENTO: {nasc} => IDADE: {idade} ANOS')
+                    print('CLASSIFICAÇÃO: \033[1;32mSENIOR\033[m')
+                elif idade > 35 and idade <= 60:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO ATLETA: \033[1;32m{nome.upper()}\033[m')
+                    print(f'DATA NASCIMENTO: {nasc} => IDADE: {idade} ANOS')
+                    print('CLASSIFICAÇÃO: \033[1;32mSENIOR\033[m')
+                else:
+                    print('Você não tem mais idade para ficar jogando bola, vai ver NETFLIX')
+                print('-' * 15, ' FIM DO EXERCIIO ', '-' * 15)
+        case 33:
+            print('\033[1;32mTITULO: PAGAMENTO EM LOJA.\033[m\n')
+            for c in range(1, 4):
+                nome = str(input('Digite o nome do cliente: ').strip())
+                vl = float(input('Digite o valor da compra R$ '))
+                print('===========================================')
+                print('[ 1 ] PGTO A VISTA 10% DESCONTO')
+                print('[ 2 ] PGTO CARTAO 1X 5% DESCONTO')
+                print('[ 3 ] PGTO CARTAO 2X PREÇO NORMAL')
+                print('[ 4 ] PGTO CARTAO 3X 20% ACRESCIMO')
+                print('===========================================\n')
+
+                esc = int(input('Escolha a forma de pagamento: '))
+                vista = vl - vl * (10 / 100)
+                cartao1 = vl - vl * (5 / 100)
+                cartao2 = vl
+                cartao3 = vl + vl * (20/100)
+                if esc == 1:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO CLIENTE: {nome.upper()}')
+                    print(f'OPÇÃO DE PAGAMENTO: {esc}')
+                    if esc == 1:
+                        print('A VISTA')
+                    elif esc == 2:
+                        print('CARTÃO 1X')
+                    elif esc == 3:
+                        print('CARTÃO 2X')
+                    elif esc == 4:
+                        print('CARTÃO 3X')
+                    else:
+                        print('Você Digitou uma opção errada, verifique.')
+
+                if esc == 2:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO CLIENTE: {nome.upper()}')
+
+                    if esc == 1:
+                        print('OPÇÃO DE PAGAMENTO: A VISTA')
+                    elif esc == 2:
+                        print('OPÇÃO DE PAGAMENTO: CARTÃO 1X')
+                    elif esc == 3:
+                        print('OPÇÃO DE PAGAMENTO: CARTÃO 2X')
+                    elif esc == 3:
+                        print('OPÇÃO DE PAGAMENTO: CARTÃO 3X')
+                    else:
+                        print('Você Digitou uma opção errada, verifique.')
+
+                if esc == 3:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO CLIENTE: {nome.upper()}')
+                    print(f'OPÇÃO DE PAGAMENTO: {esc}')
+                    if esc == 1:
+                        print('A VISTA')
+                    elif esc == 2:
+                        print('CARTÃO 1X')
+                    elif esc == 3:
+                        print('CARTÃO 2X')
+                    elif esc == 3:
+                        print('CARTÃO 3X')
+                    else:
+                        print('Você Digitou uma opção errada, verifique.')
+
+                if esc == 4:
+                    print('\n\033[1;45m RESUMO:\033[m\n')
+                    print(f'NOME DO CLIENTE: {nome.upper()}')
+                    print(f'OPÇÃO DE PAGAMENTO: {esc}')
+                    if esc == 1:
+                        print('A VISTA')
+                    elif esc == 2:
+                        print('CARTÃO 1X')
+                    elif esc == 3:
+                        print('CARTÃO 2X')
+                    elif esc == 3:
+                        print('CARTÃO 3X')
+                    else:
+                        print('Você Digitou uma opção errada, verifique.')
+
+            print('-' * 15, ' FIM DO EXERCIIO ', '-' * 15)
+        case 34:
+            print('\033[1;32mTITULO: JOGO PEDRA, PAPEL OU TESOURA.\033[m\n')
+            import random
+            for c in range(1, 4):
+                print('========================================')
+                print(f'{c}ª RODADA!')
+                print('[ 1 ] PEDRA')
+                print('[ 2 ] PAPEL')
+                print('[ 3 ] TESOURA')
+                print('========================================')
+                lista = [1, 2, 3]
+                jogador = int(input('JOGADOR FAÇA SUA ESCOLHA: '.strip()))
+                computador = random.choice(lista)
+                time.sleep(2)
+                print('JÓ')
+                time.sleep(2)
+                print('KEN')
+                time.sleep(2)
+                print('PÔ !!!')
+                print('\n\033[1;45m RESUMO:\033[m\n')
+                if jogador == 1 and computador == 1:
+                    print('JOGADOR E COMPUTADOR COLOCARAM PEDRA')
+                    print('\033[1;34mRODADA EMPATADA\033[m')
+                elif jogador == 2 and computador == 2:
+                    print('JOGADOR E COMPUTADOR COLOCARAM PAPEL')
+                    print('\033[1;34mRODADA EMPATADA\033[m')
+                elif jogador == 3 and computador == 3:
+                    print('JOGADOR E COMPUTADOR COLOCARAM TESOURA')
+                    print('\033[1;34mRODADA EMPATADA\033[m')
+                elif jogador == 1 and computador == 2:
+                    print('JOGADOR COLOCOU PEDRA')
+                    print('COMPUTADOR COLOCOU PAPEL')
+                    print('PAPEL EMBRULHA PEDRA - \033[1;34mCOMPUTADOR GANHOU\033[m')
+                elif jogador == 2 and computador == 3:
+                    print('JOGADOR COLOCOU PAPEL')
+                    print('COMPUTADOR COLOCOU TESOURA')
+                    print('TESOURA CORTA O PAPEL - \033[1;34mCOMPUTADOR GANHOU\033[m')
+                elif jogador == 3 and computador == 1:
+                    print('JOGADOR COLOCOU TESOURA')
+                    print('COMPUTADOR COLOCOU PEDRA')
+                    print('PEDRA QUEBRA A TESOURA - \033[1;34mCOMPUTADOR GANHOU\033[m')
+                    #print('--')
+                elif computador == 1 and jogador == 2:
+                    print('COMPUTADOR COLOCOU PEDRA')
+                    print('JOGADOR COLOCOU PAPEL')
+                    print('PAPEL EMBRULHA PEDRA - \033[1;34mJOGADOR GANHOU\033[m')
+                elif computador == 2 and jogador == 3:
+                    print('COMPUTADOR COLOCOU PAPEL')
+                    print('JOGADOR COLOCOU TESOURA')
+                    print('TESOURA CORTA O PAPEL - \033[1;34mJOGADOR GANHOU\033[m')
+                elif computador == 3 and jogador == 1:
+                    print('COMPUTADOR COLOCOU TESOURA')
+                    print('JOGADOR COLOCOU PEDRA')
+                    print('PEDRA QUEBRA A TESOURA - \033[1;34mJOGADOR GANHOU\033[m')
+                else:
+                    print('VOCÊ DIGITOU DADOS INVÁLIDOS, RECOMECE !!')
+            print('-' * 15, ' FIM DO EXERCIIO ', '-' * 15)
+
 
     resp = int(input(f'Deseja continuar? \033[1;31;40m99\033[m Para finalizar. --> '))
 
